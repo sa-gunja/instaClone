@@ -10,7 +10,7 @@ import "swiper/swiper.scss";
 
 const Story = styled.div`
   width:100%;
-  padding:12.5px 20px;
+  padding:12.5px 15px;
 `;
 
 const StoryItem = styled.div`
@@ -66,7 +66,7 @@ const users = [
   {
     idx: 1,
     profile: "http://placeimg.com/640/480/any",
-    name: "유저1",
+    name: "aircraft",
     follwState: false,
     imgs: [
       "http://placeimg.com/640/480/any",
@@ -76,7 +76,7 @@ const users = [
   {
     idx: 2,
     profile: "http://placeimg.com/640/480/tech",
-    name: "유저2",
+    name: "coco_coco909",
     follwState: true,
     imgs: [
       "http://placeimg.com/640/480/animal",
@@ -86,7 +86,7 @@ const users = [
   {
     idx: 3,
     profile: "http://placeimg.com/640/480/nature",
-    name: "유저3",
+    name: "easydeep.ai",
     follwState: false,
     imgs: [
       "http://placeimg.com/640/480/any",

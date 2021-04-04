@@ -10,6 +10,8 @@ function Header() {
     height: 55px;
     padding: 12.5px 20px;
     position: fixed;
+    z-index:2;
+    background:#000;
     top: 0;
     left: 0%;
     border-bottom: 1px solid #262626;

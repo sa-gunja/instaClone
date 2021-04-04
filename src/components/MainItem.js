@@ -9,6 +9,7 @@ SwiperCore.use([Pagination]);
 const Userheader = styled.div`
   width:100%;
   height:50px;
+  padding:0 15px;
   line-height:50px;
   font-size:0.9rem;
 
@@ -25,6 +26,8 @@ const Userheader = styled.div`
 
   .userFollow{
     float:left;
+    color:#377ccb;
+    font-size:0.8rem;
   }
 
   .userMore{
@@ -32,13 +35,20 @@ const Userheader = styled.div`
   }
 `;
 
-const userImg = styled.div`
+const UserImg = styled.div`
   width:30px;
   height:30px;
   border-radius:50%;
   float:left;
-  margin-right:7.5px;
-  background: ${props => props.profile} center center / cover no-repeat;
+  margin-right:10px;
+  margin-top:8px;
+  background: url(${props => props.profile}) center center / cover no-repeat;
+`;
+
+const SlideImg = styled.div`
+  width:100%;
+  height:350px;
+  background:url(${props => props.src}) center center / cover no-repeat;
 `;
 
 function MainItem(props) {
@@ -46,7 +56,7 @@ function MainItem(props) {
   return (
     <div>
       <Userheader>
-        <userImg profile={users.profile} />
+        <UserImg profile={users.profile} />
         <div className="userName">{users.name}</div>
         <div className="userFollow">{users.follwState || "팔로우"}</div>
         <div className="userMore">...</div>
@@ -54,7 +64,7 @@ function MainItem(props) {
       <div>
       <Swiper spaceBetween={0} slidesPerView={1} pagination>
         {
-          users.imgs.map(item => <SwiperSlide><img src={item} alt="userImg" /></SwiperSlide>)
+          users.imgs.map(item => <SwiperSlide><SlideImg src={item} /></SwiperSlide>)
         }
       </Swiper>
       </div>

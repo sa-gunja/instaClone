@@ -2,10 +2,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import MainItem from "components/MainItem.js";
+import Menu from "components/Menu.js";
+import MainHeader from "components/MainHeader.js";
+
 
 import "swiper/swiper.scss";
 
 const Story = styled.div`
+  width:100%;
+  padding:12.5px 20px;
+`;
+
+const StoryItem = styled.div`
   width: 100%;
   text-align: center;
 
@@ -57,6 +65,7 @@ const storyList = [
 const users = [
   {
     idx: 1,
+    profile: "http://placeimg.com/640/480/any",
     name: "유저1",
     follwState: false,
     imgs: [
@@ -66,6 +75,7 @@ const users = [
   },
   {
     idx: 2,
+    profile: "http://placeimg.com/640/480/tech",
     name: "유저2",
     follwState: true,
     imgs: [
@@ -75,6 +85,7 @@ const users = [
   },
   {
     idx: 3,
+    profile: "http://placeimg.com/640/480/nature",
     name: "유저3",
     follwState: false,
     imgs: [
@@ -104,25 +115,27 @@ function Home() {
 
   return (
     <div>
-      <div className="content">
+    <MainHeader />
+      <Story>
         <Swiper spaceBetween={15} slidesPerView={4.8}>
           {userStory.map((item) => {
             return (
               <SwiperSlide key={item.idx}>
-                <Story height={`${height}px`}>
+                <StoryItem height={`${height}px`}>
                   <div className="story_img"></div>
                   <div className="story_name">{item.name}</div>
-                </Story>
+                </StoryItem>
               </SwiperSlide>
             );
           })}
         </Swiper>
-        <div>
-          {
-            users.map(item => <MainItem users={item} />)
-          }
-        </div>
+      </Story>
+      <div>
+        {
+          users.map(item => <MainItem users={item} />)
+        }
       </div>
+      <Menu />
     </div>
   );
 }

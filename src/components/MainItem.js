@@ -7,7 +7,14 @@ import 'swiper/components/pagination/pagination.scss';
 SwiperCore.use([Pagination]);
 
 const Userheader = styled.div`
-  
+  width:100%;
+  height:50px;
+
+  &::after{
+    content: "";
+    display:block;
+    clear:both;
+  }
 `;
 
 
@@ -15,12 +22,12 @@ function MainItem(props) {
   const users = props.users;
   return (
     <div>
-      <div>
+      <Userheader>
         <div className="userName">img</div>
         <div className="">{users.name}</div>
         <div>{users.follwState || "팔로우"}</div>
         <div>...</div>
-      </div>
+      </Userheader>
       <div>
       <Swiper spaceBetween={0} slidesPerView={1} pagination>
         {

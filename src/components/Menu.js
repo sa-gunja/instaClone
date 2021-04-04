@@ -15,6 +15,7 @@ const MenuStyle = styled.div`
   bottom: 0;
   padding-top: 5px;
   border-top: 1px solid #262626;
+  z-index:2;
 
   & > div {
     width: 20%;
